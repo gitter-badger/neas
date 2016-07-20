@@ -1,6 +1,6 @@
 using System;
 
-namespace Nea
+namespace Neas
 {
     /// <summary>
     /// Class reading/Writing properties to/from config object

@@ -1,6 +1,6 @@
 using System;
 
-namespace Nea
+namespace Neas
 {
     /// <summary>
     /// Common interface for all config objects 

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Nea
+namespace Neas
 {
     /// <summary>
     /// API of the central kernel

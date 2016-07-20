@@ -1,6 +1,6 @@
 using System;
 
-namespace Nea
+namespace Neas
 {
     /// <summary>
     /// Standard API for modules within the application server

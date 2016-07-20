@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Nea.Core
+namespace Neas.Core
 {
     public class Kernel : IKernel
     {

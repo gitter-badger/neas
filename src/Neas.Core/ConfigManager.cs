@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Nea.Core
+namespace Neas.Core
 {
     internal class ConfigManager : IConfigManager
     {
