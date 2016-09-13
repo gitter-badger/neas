@@ -1,11 +1,11 @@
 using System;
 
-namespace Neas
+namespace Neas.Core
 {
     /// <summary>
     /// Class reading/Writing properties to/from config object
     /// </summary>
-    public interface IConfigManager
+    internal interface IConfigManager
     {
         /// <summary>
         /// Read properties and write them to the modules config object

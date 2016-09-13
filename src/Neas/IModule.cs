@@ -15,6 +15,17 @@ namespace Neas
         /// <summary>
         /// Config of this modules
         /// </summary>
-        IConfig Config { get; }    
+        IConfig Config { get; }
+
+		/// <summary>
+		/// Start the module after the kernel has resolved all dependencies and
+		/// loaded the config
+		/// </summary>
+		void Start();
+
+		/// <summary>
+		/// Stop exeuction and prepare for application shutdown
+		/// </summary>
+		void Stop();
     }
 }

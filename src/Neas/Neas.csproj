@@ -33,9 +33,21 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IConfig.cs" />
-    <Compile Include="IConfigManager.cs" />
-    <Compile Include="IKernel.cs" />
     <Compile Include="IModule.cs" />
+    <Compile Include="DependencyType.cs" />
+    <Compile Include="IModuleOrchastration.cs" />
+    <Compile Include="Base\ModuleBase.cs" />
+    <Compile Include="ResolvedDependency.cs" />
+    <Compile Include="DeclaredDependency.cs" />
+    <Compile Include="IDriver.cs" />
+    <Compile Include="IDriverController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="Base\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
 </Project>
