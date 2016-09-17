@@ -32,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IConfig.cs" />
     <Compile Include="IModule.cs" />
     <Compile Include="DependencyType.cs" />
     <Compile Include="IModuleOrchastration.cs" />
@@ -50,6 +49,11 @@
     <Compile Include="Module\ModuleStateBase.cs" />
     <Compile Include="Module\StoppedState.cs" />
     <Compile Include="Module\StartingState.cs" />
+    <Compile Include="IConfiguration.cs" />
+    <Compile Include="Module\RunningState.cs" />
+    <Compile Include="Module\StoppingState.cs" />
+    <Compile Include="Module\WarningState.cs" />
+    <Compile Include="Module\ErrorState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

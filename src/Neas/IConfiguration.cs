@@ -5,7 +5,7 @@ namespace Neas
     /// <summary>
     /// Common interface for all config objects 
     /// </summary>
-    public interface IConfig
+    public interface IConfiguration
     {
         /// <summary>
         /// Read properties from a config file

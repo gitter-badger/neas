@@ -15,7 +15,7 @@ namespace Neas
         /// <summary>
         /// Config of this modules
         /// </summary>
-        IConfig Config { get; }
+        IConfiguration Configuration { get; }
 
         /// <summary>
         /// Current state of the module

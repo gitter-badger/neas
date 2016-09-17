@@ -23,10 +23,22 @@ namespace Neas.Module
         /// <summary>
         /// Create new instance of the state machine
         /// </summary>
-        public static ModuleState Create(ModuleBase target)
+        public static ModuleStateBase Create(ModuleBase target)
         {
             return new StoppedState(target);
         }
+
+        #region Transitions
+
+        public virtual void Start()
+        {
+        }
+
+        public virtual void Stop()
+        {
+        }
+
+        #endregion
 
 
         #region States
@@ -36,7 +48,7 @@ namespace Neas.Module
         /// </summary>
         protected void NextState(int stateNumber)
         {
-            ModuleState state;
+            ModuleStateBase state;
             switch(stateNumber)
             {
                 case Stopped:
@@ -45,11 +57,22 @@ namespace Neas.Module
                 case Starting:
                     state = new StartingState(Module);
                     break;
-                 
+                case Running:
+                    state = new RunningState(Module);
+                    break;
+                case Stopping:
+                    state = new StoppingState(Module);
+                    break;
+                case Warning:
+                    state = new WarningState(Module);
+                    break;
+                case Error:
+                    state = new ErrorState(Module);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("stateNumber");
             }
-            Module.State = state;
+            Module.CurrentState = state;
         }
 
         /// <summary>

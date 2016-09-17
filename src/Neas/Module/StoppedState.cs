@@ -13,6 +13,21 @@ namespace Neas.Module
         internal StoppedState(ModuleBase module) : base(module)
         {
         }
+
+        public override void Start()
+        {
+            NextState(Starting);
+            try
+            {
+                Module.OnStart();
+
+                NextState(Running);
+            }
+            catch (Exception ex)
+            {
+                NextState(Error);
+            }
+        }
     }
 }
 

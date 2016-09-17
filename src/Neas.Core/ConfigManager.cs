@@ -21,13 +21,13 @@ namespace Neas.Core
                 return;
                 
             var config = File.ReadAllLines(path);
-            module.Config.Read(config);
+            module.Configuration.Read(config);
         }
         
         public void Write(IModule module)
         {
             var path = BuildPath(module.Name);
-            var config = module.Config.Write();
+            var config = module.Configuration.Write();
             File.WriteAllLines(path, config);
         }
         

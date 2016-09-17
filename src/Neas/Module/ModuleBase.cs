@@ -15,7 +15,7 @@ namespace Neas.Module
         /// </summary>
         internal ModuleBase() 
         {
-            State = ModuleStateBase.Create(this);
+            CurrentState = ModuleStateBase.Create(this);
         }
 
 		#region IModule implementation
@@ -24,16 +24,26 @@ namespace Neas.Module
 		public abstract string Name { get; }
 
 		/// <see cref="IModule"/>
-		public IConfig Config { get; internal set; }
+        public abstract IConfiguration Configuration { get; }
 
         /// <see cref="IModule"/>
-        public ModuleState State { get; internal set; }
+        ModuleState IModule.State { get { return CurrentState; } }
+        /// <summary>
+        /// Current state engine object reference
+        /// </summary>
+        internal ModuleStateBase CurrentState { get; set; }
 
 		/// <see cref="IModule"/>
-		public abstract void Start ();
+        void IModule.Start()
+        {
+            CurrentState.Start();   
+        }
 
 		/// <see cref="IModule"/>
-		public abstract void Stop ();
+        void IModule.Stop()
+        {
+            CurrentState.Stop();
+        }
 
 		#endregion
 
@@ -67,13 +77,27 @@ namespace Neas.Module
 		}
 
 		#endregion
+
+        #region Transitions
+
+        /// <summary>
+        /// Execute the startup routine
+        /// </summary>
+        protected internal abstract void OnStart();
+
+        /// <summary>
+        /// Execute the shutdown routine
+        /// </summary>
+        protected internal abstract void OnStop();
+
+        #endregion
 	}
 
     /// <summary>
     /// Mandatory base class for all implementations of <see cref="IModule"/>
     /// </summary>
     public abstract class ModuleBase<TConfig> : ModuleBase
-        where TConfig : IConfig, new()
+        where TConfig : IConfiguration, new()
     {
         /// <summary>
         /// Prepare the typed <see cref="IConfig"/> implementation and the class
@@ -81,6 +105,16 @@ namespace Neas.Module
         protected ModuleBase ()
         {
             Config = new TConfig ();
+        }
+
+        /// <summary>
+        /// Typed access to the config
+        /// </summary>
+        protected TConfig Config { get; private set;}
+
+        public override IConfiguration Configuration
+        {
+            get { return Config; }
         }
     }
 }
