@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Neas.Core
+namespace Neas
 {
     /// <summary>
     /// API of the central kernel
@@ -17,5 +17,10 @@ namespace Neas.Core
         /// Stop execution and prepare for shutdown
         /// </summary>
         void Stop();
+
+        /// <summary>
+        /// Get all modules
+        /// </summary>
+        IEnumerable<IModule> GetAll();
     }
 }

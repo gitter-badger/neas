@@ -47,6 +47,10 @@ namespace Neas.Core
             throw new NotImplementedException();
         }
 
+        public System.Collections.Generic.IEnumerable<IModuleOrchastration> GetAll()
+        {
+            return _allModules;
+        }
         #endregion
     }
 }

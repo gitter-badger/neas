@@ -9,6 +9,16 @@ namespace Neas
     public interface IDriverController
     {
         /// <summary>
+        /// Start driver controller and all drivers
+        /// </summary>
+        void Start();
+
+        /// <summary>
+        /// Stop driver controller and terminate connection of all drivers
+        /// </summary>
+        void Stop();
+
+        /// <summary>
         /// Get driver by name.
         /// </summary>
         TDriver GetByName<TDriver>(string driverName)

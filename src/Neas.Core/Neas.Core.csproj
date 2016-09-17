@@ -35,7 +35,6 @@
     <Compile Include="ConfigManager.cs" />
     <Compile Include="Kernel.cs" />
     <Compile Include="IConfigManager.cs" />
-    <Compile Include="IKernel.cs" />
     <Compile Include="IModuleManager.cs" />
     <Compile Include="ModuleManager.cs" />
   </ItemGroup>

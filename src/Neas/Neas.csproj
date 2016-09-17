@@ -41,6 +41,9 @@
     <Compile Include="DeclaredDependency.cs" />
     <Compile Include="IDriver.cs" />
     <Compile Include="IDriverController.cs" />
+    <Compile Include="ICoreModule.cs" />
+    <Compile Include="IKernel.cs" />
+    <Compile Include="Drivers\IDigitalIoDriver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -49,5 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base\" />
+    <Folder Include="Drivers\" />
   </ItemGroup>
 </Project>

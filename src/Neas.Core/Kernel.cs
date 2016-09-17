@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Neas.Core
 {
@@ -55,13 +56,38 @@ namespace Neas.Core
             }
 
             // Step 4: Start all drivers
-            _driverController
+            _driverController.Start();
+
+            // Step 5: Link core modules and kernel
+            foreach (var module in _moduleManager.GetAll().OfType<ICoreModule>())
+            {
+                module.Kernel = this;
+            }
+
+            // Step 6: Start all modules
+            _moduleManager.StartAll();
         }
 
         /// <see cref="IKernel"/>
         public void Stop()
         {
-            throw new NotImplementedException();
+            // Step 1: Stop all modules
+            _moduleManager.StopAll();
+
+            // Step 2: Stop all drivers
+            _driverController.Stop();
+
+            // Step 3: Save the current state of all configs if they were modified
+            foreach(var module in _moduleManager.GetAll()) 
+            {
+                _configManager.Write(module);   
+            }
+        }
+
+        /// <see cref="IKernel"/>
+        public IEnumerable<IModule> GetAll()
+        {
+            return _moduleManager.GetAll();
         }
     }
 }

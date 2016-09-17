@@ -1,14 +1,25 @@
 ﻿<Properties StartupItem="Neas/Neas.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Neas.Core/Kernel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Neas/Properties/AssemblyInfo.cs">
     <Files>
-      <File FileName="Neas/IConfig.cs" Line="1" Column="1" />
-      <File FileName="Neas.Core/ConfigManager.cs" Line="6" Column="36" />
       <File FileName="Neas.Core/Kernel.cs" Line="1" Column="1" />
+      <File FileName="Neas/Properties/AssemblyInfo.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Neas" expanded="True">
+            <Node name="Neas" expanded="True" />
+            <Node name="Neas.Core" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/development/neas/src/Neas/DeclaredDependency.cs" line="34" column="57" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
