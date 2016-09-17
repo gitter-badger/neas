@@ -53,6 +53,7 @@ namespace Neas.Core
             {
                 var module = _allModules[index];
                 var dependencies = module.GetDependencies();
+                var resolvedDependencies = new ResolvedDependency[dependencies.Length];
 
                 // Iterate all dependencies and create cross links
                 var dependencyLinks = new int[dependencies.Length];
@@ -65,8 +66,14 @@ namespace Neas.Core
                     // Link dependency and dependent
                     dependencyLinks[i] = dependencyIndex;
                     dependents[dependencyIndex].Add(index);
+
+                    // Resolve the dependency
+                    var resolved = dependency.Resolve(_allModules[dependencyIndex]);
+                    resolvedDependencies[i] = resolved;
                 }
                 _dependencyGraph[index].Dependencies = dependencyLinks;
+
+                module.ResolveDependencies(resolvedDependencies);
             }
 
             // Step 3: Iterate over the dependents dictionary and create the reference array

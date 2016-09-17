@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Neas.Core
 {
-    internal class ConfigManager : IConfigManager
+    internal sealed class ConfigManager : IConfigManager
     {
         private readonly string _dir;
         

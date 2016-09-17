@@ -8,7 +8,7 @@ namespace Neas.Core
 	/// The kernel of the entire application that is created by the individual runner application
 	/// and orchastrates the modules 
 	/// </summary>
-    public class Kernel : IKernel
+    public sealed class Kernel : IKernel
     {
 		/// <summary>
 		/// Config manage that composes the dependency tree and handles the life cylce
@@ -35,6 +35,7 @@ namespace Neas.Core
 		{
 			_configManager = new ConfigManager (configDir);
             _moduleManager = new ModuleManager(modules);
+            _driverController = new DriverController(drivers);
 		}
 
         /// <see cref="IKernel"/>
