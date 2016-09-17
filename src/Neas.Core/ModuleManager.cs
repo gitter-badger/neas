@@ -72,7 +72,7 @@ namespace Neas.Core
             // Step 3: Iterate over the dependents dictionary and create the reference array
             foreach (var pair in dependents)
             {
-                var references = pair.Value.ToArray;
+                var references = pair.Value.ToArray();
                 _dependencyGraph[pair.Key].Dependents = references;
             }
         }
@@ -106,7 +106,7 @@ namespace Neas.Core
         /// <summary>
         /// Class that represents a module as well as its dependents and dependencies.
         /// </summary>
-        private struct ModuleDependencyLink
+        private class ModuleDependencyLink
         {
             /// <summary>
             /// Create a temporary reference to another module

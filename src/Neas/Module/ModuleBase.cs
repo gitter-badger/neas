@@ -7,7 +7,7 @@ namespace Neas.Module
     /// <summary>
     /// Module base restricted to this assembly that shall only be used by internal components like the state machine.
     /// </summary>
-	public abstract class ModuleBase : IModuleOrchastration
+    public abstract class ModuleBase : IModuleOrchastration
     {
         /// <summary>
         /// Internal constructor to prevent usage of the class outside this assembly. Please
@@ -38,6 +38,9 @@ namespace Neas.Module
 		#endregion
 
 		#region IModuleOrchastration implementation
+
+        /// <see cref="IModuleOrchastration"/>
+        int IModuleOrchastration.ModuleIndex { get; set; }
 
 		/// <see cref="IModuleOrchastration"/>
 		public IDriverController DriverController { get; set; }
