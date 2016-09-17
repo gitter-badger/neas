@@ -9,6 +9,11 @@ namespace Neas
 	public interface IModuleOrchastration : IModule
 	{
         /// <summary>
+        /// Index of this module assigned by the module manager during start up
+        /// </summary>
+        int ModuleIndex { get; set; }
+
+        /// <summary>
         /// All modules receive access to the driver controller
         /// </summary>
         IDriverController DriverController { get; set; }

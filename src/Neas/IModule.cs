@@ -17,6 +17,12 @@ namespace Neas
         /// </summary>
         IConfig Config { get; }
 
+        /// <summary>
+        /// Current state of the module
+        /// </summary>
+        /// <value>The state.</value>
+        ModuleState State { get; }
+
 		/// <summary>
 		/// Start the module after the kernel has resolved all dependencies and
 		/// loaded the config

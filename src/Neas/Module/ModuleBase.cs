@@ -2,15 +2,21 @@
 using System.Runtime.CompilerServices;
 using System.Linq;
 
-namespace Neas.Base
+namespace Neas.Module
 {
-	public abstract class ModuleBase<TConfig> : IModuleOrchastration
-		where TConfig : IConfig, new()
-	{
-		protected ModuleBase ()
-		{
-			Config = new TConfig ();
-		}
+    /// <summary>
+    /// Module base restricted to this assembly that shall only be used by internal components like the state machine.
+    /// </summary>
+	public abstract class ModuleBase : IModuleOrchastration
+    {
+        /// <summary>
+        /// Internal constructor to prevent usage of the class outside this assembly. Please
+        /// derive from <see cref="ModuleBase{TConfig}"/> instead.
+        /// </summary>
+        internal ModuleBase() 
+        {
+            State = ModuleStateBase.Create(this);
+        }
 
 		#region IModule implementation
 
@@ -18,7 +24,10 @@ namespace Neas.Base
 		public abstract string Name { get; }
 
 		/// <see cref="IModule"/>
-		public IConfig Config { get; private set; }
+		public IConfig Config { get; internal set; }
+
+        /// <see cref="IModule"/>
+        public ModuleState State { get; internal set; }
 
 		/// <see cref="IModule"/>
 		public abstract void Start ();
@@ -56,5 +65,20 @@ namespace Neas.Base
 
 		#endregion
 	}
+
+    /// <summary>
+    /// Mandatory base class for all implementations of <see cref="IModule"/>
+    /// </summary>
+    public abstract class ModuleBase<TConfig> : ModuleBase
+        where TConfig : IConfig, new()
+    {
+        /// <summary>
+        /// Prepare the typed <see cref="IConfig"/> implementation and the class
+        /// </summary>
+        protected ModuleBase ()
+        {
+            Config = new TConfig ();
+        }
+    }
 }
 

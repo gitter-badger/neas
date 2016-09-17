@@ -1,20 +1,13 @@
 ﻿<Properties StartupItem="Neas/Neas.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Neas/Properties/AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Neas/Base/ModuleBase.cs">
     <Files>
-      <File FileName="Neas.Core/Kernel.cs" Line="1" Column="1" />
-      <File FileName="Neas/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Neas.Core/Kernel.cs" Line="3" Column="19" />
+      <File FileName="Neas.Core/ModuleManager.cs" Line="16" Column="61" />
+      <File FileName="Neas/IModule.cs" Line="21" Column="40" />
+      <File FileName="Neas/ModuleState.cs" Line="10" Column="39" />
+      <File FileName="Neas/Base/ModuleBase.cs" Line="55" Column="62" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Neas" expanded="True">
-            <Node name="Neas" expanded="True" />
-            <Node name="Neas.Core" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
