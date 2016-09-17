@@ -44,6 +44,8 @@
     <Compile Include="ICoreModule.cs" />
     <Compile Include="IKernel.cs" />
     <Compile Include="Drivers\IDigitalIoDriver.cs" />
+    <Compile Include="Drivers\IAnalogIoDriver.cs" />
+    <Compile Include="Drivers\ICameraDriver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
